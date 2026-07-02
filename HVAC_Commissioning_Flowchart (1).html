@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HVAC Pre-Commissioning &amp; Commissioning Flowchart</title>
+<style>
+  :root{
+    --box-border:#000;
+    --line:#000;
+    --title-size:13px;
+    --bullet-size:11.5px;
+  }
+  body{
+    font-family: Calibri, Arial, sans-serif;
+    background:#fff;
+    color:#000;
+    margin:0;
+    padding:30px;
+  }
+  h1{
+    text-align:center;
+    font-size:20px;
+    color:#1F4E79;
+    margin:0 0 10px 0;
+  }
+  .hint{
+    text-align:center;
+    font-size:12px;
+    color:#666;
+    margin-bottom:20px;
+  }
+  #chart{
+    position:relative;
+    width:1400px;
+    height:1400px;
+    margin:0 auto;
+  }
+  .box{
+    position:absolute;
+    box-sizing:border-box;
+    border:1.4px solid var(--box-border);
+    background:#fff;
+    padding:6px 8px;
+    text-align:left;
+    overflow:visible;
+  }
+  .box .title{
+    font-weight:700;
+    font-size:var(--title-size);
+    text-align:center;
+    margin-bottom:4px;
+    outline:none;
+  }
+  .box ul{
+    margin:0;
+    padding-left:14px;
+    font-size:var(--bullet-size);
+    line-height:1.35;
+  }
+  .box ul ul{
+    padding-left:14px;
+  }
+  .box[contenteditable="true"]:hover,
+  .box .title[contenteditable]:hover,
+  .box li[contenteditable]:hover{
+    background:#fffbe6;
+  }
+  .placeholder{
+    color:#999;
+    font-style:italic;
+  }
+  .line{
+    position:absolute;
+    background:var(--line);
+  }
+  .hline{ height:1.4px; }
+  .vline{ width:1.4px; }
+  .new-section .box{ border-color:#000; }
+  .badge{
+    position:absolute;
+    top:-10px;
+    left:-10px;
+    background:#1F4E79;
+    color:#fff;
+    font-size:10px;
+    padding:1px 5px;
+    border-radius:3px;
+    display:none;
+  }
+  #downloadBtn{
+    position:fixed;
+    bottom:26px;
+    right:30px;
+    background:#1F4E79;
+    color:#fff;
+    border:none;
+    padding:12px 24px;
+    font-size:14px;
+    font-weight:600;
+    border-radius:30px;
+    cursor:pointer;
+    font-family: Calibri, Arial, sans-serif;
+    box-shadow:0 4px 14px rgba(0,0,0,0.28);
+    z-index:999;
+  }
+  #downloadBtn:hover{ background:#163a57; }
+
+  @media print{
+    #downloadBtn, .hint{ display:none; }
+    body{ padding:20px; margin:0; }
+    #chart{ margin:0; }
+    @page{ size: 15.5in 16.2in; margin: 8mm; }
+  }
+</style>
+</head>
+<body>
+
+<h1>HVAC Pre-Commissioning &amp; Commissioning Flowchart</h1>
+<div class="hint">Click any title or bullet to edit directly. Boxes marked <span class="placeholder">[Add title]</span> are still awaiting content.</div>
+<button id="downloadBtn" onclick="window.print()">&#8681; Download as PDF</button>
+
+<div id="chart">
+
+  <!-- ================= EXISTING STRUCTURE (1-17) ================= -->
+
+  <div class="box" style="left:614px; top:60px; width:326px; height:52px;">
+    <div class="title" contenteditable="true">PRE-COMMISSIONING &ndash; 5 CHECKS</div>
+  </div>
+
+  <div class="box" style="left:427px; top:157px; width:173px; height:48px;">
+    <div class="title" contenteditable="true">ELECTRICAL</div>
+  </div>
+  <div class="box" style="left:964px; top:157px; width:173px; height:48px;">
+    <div class="title" contenteditable="true">MECHANICAL</div>
+  </div>
+
+  <div class="box" style="left:353px; top:246px; width:163px; height:48px;">
+    <div class="title" contenteditable="true">SUPPLY</div>
+  </div>
+  <div class="box" style="left:534px; top:246px; width:163px; height:48px;">
+    <div class="title" contenteditable="true">CONTROLS</div>
+  </div>
+  <div class="box" style="left:889px; top:246px; width:163px; height:48px;">
+    <div class="title" contenteditable="true">REFRIGERANT</div>
+  </div>
+  <div class="box" style="left:1071px; top:246px; width:163px; height:48px;">
+    <div class="title" contenteditable="true">ALARM EQUIPMENT</div>
+  </div>
+
+  <div class="box" style="left:706px; top:336px; width:173px; height:48px;">
+    <div class="title" contenteditable="true">START UP</div>
+  </div>
+  <div class="box" style="left:701px; top:420px; width:182px; height:48px;">
+    <div class="title" contenteditable="true">FUNCTIONAL TESTING</div>
+  </div>
+
+  <!-- Row of 7 -->
+  <div class="box" style="left:181px; top:504px; width:163px; height:128px;">
+    <div class="title" contenteditable="true">SUPPLY FAN &amp; AHU</div>
+    <ul contenteditable="true">
+      <li>Fan start/stop</li>
+      <li>Fan poles/local operation</li>
+      <li>Fan speed</li>
+      <li>Fan safety trip operation</li>
+    </ul>
+  </div>
+
+  <div class="box" style="left:357px; top:504px; width:163px; height:128px;">
+    <div class="title" contenteditable="true">AIRFLOW</div>
+    <ul contenteditable="true">
+      <li>Measure total airflow</li>
+      <li>Adjust balanced dampers</li>
+      <li>Record external static pressure</li>
+      <li>Confirm design airflow achieved</li>
+    </ul>
+  </div>
+
+  <div class="box" style="left:533px; top:504px; width:163px; height:128px;">
+    <div class="title" contenteditable="true">HEATING MODE</div>
+    <ul contenteditable="true">
+      <li>Volume checks</li>
+      <li>Motorised</li>
+      <li>Return &amp; SAT</li>
+      <li>Coil temperature</li>
+    </ul>
+  </div>
+
+  <div class="box" style="left:709px; top:504px; width:163px; height:128px;">
+    <div class="title" contenteditable="true">CONTROL MODE</div>
+    <ul contenteditable="true">
+      <li>Confirm operable</li>
+      <li>Temperature</li>
+      <li>Actuators</li>
+      <li>Desired value</li>
+    </ul>
+  </div>
+
+  <div class="box" style="left:885px; top:504px; width:163px; height:192px;">
+    <div class="title" contenteditable="true">CONTROLS</div>
+    <ul contenteditable="true">
+      <li>Occupied/standby mode</li>
+      <li>Temperature setpoint adjustment</li>
+      <li>Fan enable/disable</li>
+      <li>Alarms &ndash; temperature (high/low)
+        <ul>
+          <li>Fan failure</li>
+          <li>Filter</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="box" style="left:1061px; top:504px; width:163px; height:148px;">
+    <div class="title" contenteditable="true">SAFETY DEVICE TEST</div>
+    <ul contenteditable="true">
+      <li>Fan operation</li>
+      <li>Fire alarm shutdown</li>
+      <li>Environmental trip</li>
+      <li>Fan failure</li>
+      <li>High/low pressure</li>
+    </ul>
+  </div>
+
+  <div class="box" style="left:1237px; top:504px; width:163px; height:128px;">
+    <div class="title" contenteditable="true">AIR BALANCE</div>
+    <ul contenteditable="true">
+      <li>Adjust</li>
+      <li>Supply &amp; return airflow</li>
+      <li>Static pressure</li>
+      <li>Fan speed</li>
+    </ul>
+  </div>
+
+  <div class="box" style="left:614px; top:736px; width:326px; height:100px;">
+    <div class="title" contenteditable="true">GENERAL PERFORMANCE CHECKS</div>
+    <ul contenteditable="true">
+      <li>Confirm</li>
+      <li>Stable heating</li>
+      <li>Stable cooling</li>
+    </ul>
+  </div>
+
+  <!-- ================= NEW SECTION (18-21) ================= -->
+
+  <div class="box new-section" style="left:450px; top:878px; width:260px; height:70px;">
+    <div class="title placeholder" contenteditable="true">[Add title]</div>
+  </div>
+
+  <div class="box new-section" style="left:814px; top:878px; width:260px; height:70px;">
+    <div class="title placeholder" contenteditable="true">[Add title]</div>
+  </div>
+
+  <div class="box new-section" style="left:614px; top:990px; width:326px; height:194px;">
+    <div class="title" contenteditable="true">DOCUMENTATION</div>
+    <ul contenteditable="true">
+      <li>Commissioning charts</li>
+      <li>Air balance report</li>
+      <li>Electrical test results</li>
+      <li>Controls commissioning report</li>
+      <li>Refrigerant commissioning records</li>
+      <li>Manufacturer comm'g doc</li>
+      <li>Client demonstration and handover</li>
+    </ul>
+  </div>
+
+  <div class="box new-section" style="left:614px; top:1214px; width:326px; height:154px;">
+    <div class="title" contenteditable="true">ACCEPTANCE CRITERIA</div>
+    <ul contenteditable="true">
+      <li>Safety devices operate correctly</li>
+      <li>Airflow &plusmn; 10% of design</li>
+      <li>Installed controls active &amp; stable</li>
+      <li>No active faults/alarms</li>
+      <li>Client witness test complete</li>
+    </ul>
+  </div>
+
+  <!-- ================= CONNECTORS ================= -->
+
+  <!-- root -> electrical/mechanical -->
+  <div class="line vline" style="left:777px; top:112px; height:20px;"></div>
+  <div class="line hline" style="left:514px; top:132px; width:537px;"></div>
+  <div class="line vline" style="left:514px; top:132px; height:25px;"></div>
+  <div class="line vline" style="left:1051px; top:132px; height:25px;"></div>
+
+  <!-- electrical -> supply/controls -->
+  <div class="line vline" style="left:514px; top:205px; height:20px;"></div>
+  <div class="line hline" style="left:435px; top:225px; width:159px;"></div>
+  <div class="line vline" style="left:435px; top:225px; height:21px;"></div>
+  <div class="line vline" style="left:594px; top:225px; height:21px;"></div>
+
+  <!-- mechanical -> refrigerant/alarm -->
+  <div class="line vline" style="left:1051px; top:205px; height:20px;"></div>
+  <div class="line hline" style="left:971px; top:225px; width:161px;"></div>
+  <div class="line vline" style="left:971px; top:225px; height:21px;"></div>
+  <div class="line vline" style="left:1132px; top:225px; height:21px;"></div>
+
+  <!-- 4 boxes -> start up -->
+  <div class="line vline" style="left:435px; top:294px; height:20px;"></div>
+  <div class="line vline" style="left:594px; top:294px; height:20px;"></div>
+  <div class="line vline" style="left:971px; top:294px; height:20px;"></div>
+  <div class="line vline" style="left:1132px; top:294px; height:20px;"></div>
+  <div class="line hline" style="left:435px; top:314px; width:697px;"></div>
+  <div class="line vline" style="left:792px; top:314px; height:22px;"></div>
+
+  <!-- start up -> functional testing -->
+  <div class="line vline" style="left:792px; top:384px; height:36px;"></div>
+
+  <!-- functional testing -> row of 7 -->
+  <div class="line vline" style="left:792px; top:468px; height:16px;"></div>
+  <div class="line hline" style="left:262px; top:484px; width:1060px;"></div>
+  <div class="line vline" style="left:262px; top:484px; height:20px;"></div>
+  <div class="line vline" style="left:438px; top:484px; height:20px;"></div>
+  <div class="line vline" style="left:614px; top:484px; height:20px;"></div>
+  <div class="line vline" style="left:792px; top:484px; height:20px;"></div>
+  <div class="line vline" style="left:966px; top:484px; height:20px;"></div>
+  <div class="line vline" style="left:1142px; top:484px; height:20px;"></div>
+  <div class="line vline" style="left:1318px; top:484px; height:20px;"></div>
+
+  <!-- row of 7 -> general performance checks (bus at y=706) -->
+  <div class="line vline" style="left:262px; top:632px; height:74px;"></div>
+  <div class="line vline" style="left:438px; top:632px; height:74px;"></div>
+  <div class="line vline" style="left:614px; top:632px; height:74px;"></div>
+  <div class="line vline" style="left:792px; top:632px; height:74px;"></div>
+  <div class="line vline" style="left:966px; top:696px; height:10px;"></div>
+  <div class="line vline" style="left:1142px; top:652px; height:54px;"></div>
+  <div class="line vline" style="left:1318px; top:632px; height:74px;"></div>
+  <div class="line hline" style="left:262px; top:706px; width:1056px;"></div>
+  <div class="line vline" style="left:792px; top:706px; height:30px;"></div>
+
+  <!-- general performance -> two new boxes -->
+  <div class="line vline" style="left:792px; top:836px; height:20px;"></div>
+  <div class="line hline" style="left:580px; top:856px; width:364px;"></div>
+  <div class="line vline" style="left:580px; top:856px; height:22px;"></div>
+  <div class="line vline" style="left:944px; top:856px; height:22px;"></div>
+
+  <!-- two new boxes -> Documentation box (both placeholders now equal height, bottom=948) -->
+  <div class="line vline" style="left:580px; top:948px; height:20px;"></div>
+  <div class="line vline" style="left:944px; top:948px; height:20px;"></div>
+  <div class="line hline" style="left:580px; top:968px; width:364px;"></div>
+  <div class="line vline" style="left:792px; top:968px; height:22px;"></div>
+
+  <!-- Documentation box -> Acceptance Criteria box -->
+  <div class="line vline" style="left:792px; top:1184px; height:30px;"></div>
+
+</div>
+
+</body>
+</html>
